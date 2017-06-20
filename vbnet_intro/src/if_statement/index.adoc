@@ -1,0 +1,10 @@
+= {% autotitle %}{% endautotitle %}
+
+We want computer programs to do more than just finding results of formulae.
+In this chapter, you will learn how to do *branching* (or make *decisions*) with If...Then...Else statements.
+
+Branching means to perform different actions depending on a condition.
+The concept of branching is described in the picture below.
+
+[.text-center]
++++{% include "../diagrams/if-concept.svg" %}+++

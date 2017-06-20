@@ -1,0 +1,107 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+We have learnt how to do calculation and make decisions in VB.NET.
+In this chapter, we will learn a few extra operators.
+
+
+== Order of operations
+
+As listed in the last chapter, the evaluation of expressions in Visual Basic is ordered by its operator precedence below.
+
+[cols="^1, 3, ^2l"]
+|===
+|11 (Highest) |Exponentiation |^
+|10 |Unary identity and negation |(unary)+ (unary)–
+|9 |Multiplication and floating-point division |* /
+|8 |Integer division |\
+|7 |Modulus arithmetic |Mod
+|6 |Addition and subtraction |+ –
+|5 |String concatenation |&
+|4 |Relational/comparison operators |= <> < \<= > >=
+|3 |Negation |Not
+|2 |Conjunction |And
+|1 (Lowest) |Inclusive disjunction |Or
+|===
+
+Now we continue to the operators that was not introduced before, i.e. `\`, `Mod`, `&`, and the unary operators.
+
+
+<<<
+== Division with remainders
+
+The operators `\` and `Mod` are used for division with remainders.
+`\` means getting the quotient of the division, and `Mod` means getting the remainder.
+
+Here are a few examples:
+
+[options="header", cols="2l, ^1l, 2l, ^1l"]
+|===
+|VB.NET Expression |Result |VB.NET Expression |Result
+|75 \ 8     |9      |75 Mod 8   |3
+|-75 \ 8    |-9     |-75 Mod 8  |-3
+|75 \ -8    |-9     |75 Mod -8  |3
+|-75 \ -8   |9      |-75 Mod -8 |-3
+|===
+
+Now we discuss about the signs of the results.
+In the example above, we find that the signs of both 75 (dividend) and 8 (divisor) are considered in `\`, but only the sign of 75 is considered in `Mod`.
+
+Now we go to floating point numbers.
+The results may not be obvious at all.
+
+[options="header", cols="2l, ^1l, 2l, ^1l"]
+|===
+|VB.NET Expression    |Result |VB.NET Expression    |Result
+|31.25 \ 4.5   |7      |31.25 Mod 4.5 |4.25
+|31.25 \ 5.5   |5      |31.25 Mod 5.5 |3.75
+|===
+
+The `\` operator converts numbers into integers before division, while `Mod` does not.
+Floating point numbers are converted to integers in a way not obvious to us: 4.5 is rounded off to 4, but 5.5 is rounded off to 6.
+
+CAUTION: Do not use `\` and `Mod` with floating-point numbers unless you know what are you doing.
+
+
+== Unary operators
+
+There are two unary operators in VB.NET, namely identity (`+`) and negation(`-`).
+They correspond to the positive and the negative signs of Mathematics respectively.
+
+In fact, only the unary `-` is useful.
+
+
+<<<
+== String concatenation
+
+To join strings together, i.e. *concatenate* the strings, we use the `&` operator or the `+` operator.
+`&` is preferred over `+` because `&` is defined for strings only.
+In contrast, `+` is used mainly for addition.
+Here are a few examples:
+
+[options="header", cols="2l, ^1l"]
+|===
+|VB.NET Expression |Result
+|"note" & "pad" |"notepad"
+|5 & 4 * 6 |"524"
+|===
+
+As shown in the example, `&` converts it's operands into strings implicitly.
+Note that the conversion is not done in `+`, so unintended results and even errors may happen.
+
+IMPORTANT: No space is added to the strings during a concatenation.
+
+
+== Class work
+
+Evaluate the following VB.NET expressions:
+
+[options="header", cols="2l, ^1l"]
+|===
+|VB.NET Expression |Result
+|"con" & "cent" & "rated" |
+|4 * 3 & 5 * 2 |
+|9 - 25 / 2 * 3 |
+|9 - 25 \ 2 * 3 |
+|-35 Mod 3 ^ 3 |
+|===

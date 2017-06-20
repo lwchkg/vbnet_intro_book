@@ -1,0 +1,15 @@
+= {% autotitle %}{% endautotitle %}
+
+In the last chapter, we have learnt to use If...Then...Else statement to make simple decisions.
+However, we do often make decision based on a combination of conditions.
+
+For example, when we check whether an examination mark is valid, you will check whether the mark is between 0 and 100 (both inclusive).
+To do this we need two conditions:
+
+[.text-center]
+`marks >= 0` and `marks \<= 100`.
+
+And the *logical operator* `And` is needed to join the conditions together, i.e.
+
+[source, vb]
+If marks >= 0 And marks <= 100 Then

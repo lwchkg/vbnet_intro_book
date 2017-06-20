@@ -1,0 +1,40 @@
+= Glossary
+
+== argument
+A piece of data that is passed into a procedure.
+
+== assignment operator
+An operator that assigns a value to a variable.
+
+== call
+The action of using a procedure.
+
+== call site
+The position of the code that calls a procedure. Also known as caller.
+
+== concatenate
+The operation to join two strings together.
+
+== control
+The position where the next computer instruction is executed.
+
+== iteration
+When a block of statements is executed multiple times, each repetition of these statements is called an iteration.
+
+== looping
+Executing a block of statements multiple times.
+
+== nested loop
+Putting a loop within another loop.
+
+== parameter
+A special variable defined in a procedure, that can receive data from call sites.
+
+== PRNG
+Pseudo-random number generator, that does not use a random source. It simulate randomness using an algorithm.
+
+== procedure
+A part of a program, that is packaged as a single unit. Also known as subroutine, function or subprogram.
+
+== seed
+A number used to initialize a random number generator. In VB.NET the current time is used for seeding.

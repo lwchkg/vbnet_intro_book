@@ -1,0 +1,18 @@
+= {{ page.level | replace("1.", "", 1) }}{nbsp}{nbsp}{nbsp}{{ page.title }}
+:icons: font
+
+. Write a program that throws two dice, one for the player and the other for the computer.
+  Display the values of both dice.
+  Also, compare the values of the dice.
+  If the value of the player's die is larger, output “You win!”
+  If the value of computer's die is larger, output “You lose!”
+  If the values of both dice are equal, output “Draw!”
++
+[role="sample-output", subs="normal"]
+....
+Player:   4
+Computer: 2
+You win!
+....
+
+. testing

@@ -1,0 +1,11 @@
+= {{ page.title }} {% autochapter %}2{% endautochapter %}
+
+[large-gaps]
+. Write a program to find the value of the n-th triangle number, i.e. $$ \dfrac{n(n+1)}{2} $$.
+. Write a program to calculate the value of in $$ f $$ in $$ f = \dfrac{uv}{u+v} $$.
+. Write programs that calculates percentage changes.
+  There should be one program for each:
+  * the original value,
+  * the new value, and
+  * the percentage change.
+  (Note: What are the formulas?)

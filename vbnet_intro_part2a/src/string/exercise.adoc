@@ -1,0 +1,98 @@
+= {{ page.title }} {% autochapter %}2{% endautochapter %}
+:icons: font
+
+[large-gaps]
+. Write a program that asks the user to enter his/her name and class.
+Then output the sentence “[Name] is a Secondary [x] student.”, where [Name] is the name of the student, and [x] is the form of the student.
++
+The class should contain one digit followed by one letter (in either upper case or lower case).
+If not, output “Is [class] really a class?” instead.
++
+Here are some sample outputs:
++
+[role="sample-output", subs="normal"]
+....
+Enter the name: [userinput]#Darius Lui#
+Enter the class: [userinput]#4F#
+Darius Lui is a Secondary 4 student.
+....
++
+[role="sample-output", subs="normal"]
+....
+Enter the name: [userinput]#Mary Kwok#
+Enter the class: [userinput]#1+#
+Is 1+ really a class?
+....
+
+
+. Write a program to see if a word is a palindrome, i.e. the word reads the same forward and backwards.
+The program should produce the following output:
++
+[role="sample-output", subs="normal"]
+....
+Enter a word: [userinput]#madam#
+The word is a palindrome.
+....
++
+[role="sample-output", subs="normal"]
+....
+Enter a word: [userinput]#program#
+The word is not a palindrome.
+....
+
+
+. Modify the program in the previous question to ignore letter cases, spaces, and punctuations.
+Now it should identify palindrome sentences like “Borrow or rob?”.
+
+
+. Write a program that reads a date in the format D/M/Y (e.g. 21/2/2013, 5/11/2013), and then output a sentence like “Day: 21, Month: 2, Year: 2013”.
++
+The date always comes with two “/” symbols.
+In this question, you can output the three substrings without validation.
+Note: the validation part of this question is a good exercise, but please leave it out before you finish the next chapter.
++
+[role="sample-output", subs="normal"]
+....
+Enter a date: [userinput]#21/2/2013#
+Day: 21, Month: 2, Year: 2013
+....
+
+
+. Write a Caesar cipher.
+  The Caesar cipher encodes a message by rotating each letter in the message three places down the alphabet.
+  Your program should be able to encode and decode messages, like the sample output below:
++
+[role="sample-output", subs="normal"]
+....
+Caesar Cipher
+=============
+Encode or Decode? (E/D) [userinput]#E#
+Enter the message: [userinput]#THE FIVE BOXING WIZARDS JUMP QUICKLY#
+Result: QEB CFSB YLUFKD TFWXOAP GRJM NRFZHIV
+....
++
+[role="sample-output", subs="normal"]
+....
+Caesar Cipher
+=============
+Encode or Decode? (E/D) [userinput]#D#
+Enter the message: [userinput]#QEB CFSB YLUFKD TFWXOAP GRJM NRFZHIV#
+Result: THE FIVE BOXING WIZARDS JUMP QUICKLY
+....
+
+. Write a program that reverses the order of words in the input.
+You can assume that two words are always separated by a space character.
+Here is a sample output:
++
+[role="sample-output", subs="normal"]
+....
+Enter a sentence: [userinput]#string processing is difficult#
+Order of words reversed: difficult is processing string
+....
+
+
+. (a) Write a Vigenère cipher.
++
+(b) Modify the cipher to make it stronger.
+    (Note: this is an open-ended question.)
+

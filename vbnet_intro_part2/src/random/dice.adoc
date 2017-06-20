@@ -1,0 +1,36 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+In this section, we use `Rnd` function to simulate a die (singular of dice).
+What we need to do is the following:
+
+[.text-center]
+`Dim value As Integer = Int(Rnd() * 6) + 1`
+
+[TIP]
+====
+It is okay to put `+ 1` either inside or outside the brackets.
+====
+
+If we are doing this in strict mode, then we do the following:
+
+[.text-center]
+`Dim value As Integer = CInt(Int(Rnd() * 6)) + 1`
+
+[NOTE]
+====
+The function `CInt` converts a number into `Integer` data type.
+In strict mode, the conversion from `Single` to `Integer` must be done manually.
+====
+
+To illustrate this statement, we list all possible values of `Rnd()` in the table below:
+[options="headeer", cols="3a,3a,^4l,^5l"]
+|===
+| `Rnd()` | `Rnd() * 6` | `Int(Rnd() * 6)` | `Int(Rnd() * 6) + 1`
+|$$\ge 0$$ and $$<\frac{1}{6}$$ |	$$\ge 0$$ and $$<1$$ | $$0$$ | $$1$$
+|$$\ge \frac{1}{6}$$ and $$<\frac{2}{6}$$ |	$$\ge 1$$ and $$<2$$ |  |
+|$$\ge \frac{2}{6}$$ and $$<\frac{3}{6}$$ |	 |  |
+|$$\ge \frac{3}{6}$$ and $$<\frac{4}{6}$$ |	 |  |
+|$$\ge \frac{4}{6}$$ and $$<\frac{5}{6}$$ |	 |  |
+|$$\ge \frac{5}{6}$$ and $$<1$$ |	 |  |
+|===

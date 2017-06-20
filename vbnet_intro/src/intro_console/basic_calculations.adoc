@@ -1,0 +1,66 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+Now we are learning how to store data to variables, and how to perform simple calculations.
+
+== Introduction to operators
+
+To do calculations we use operators and brackets.
+Here is an incomplete list of operators:
+
+[options="header", cols="^1l, 4, 2l, 1l"]
+|===
+|Operator |Meaning |Example |Result
+|+ |Addition |3 + 8 |11
+|- |Subtraction |10 - 15 |-5
+|* |Multiplication |3 * 8 |24
+|/ |Division (floating point)|14 / 4 |3.5
+|^ |Exponentiation |3 ^ 4 |81
+|===
+
+The usual order of operations applies here.
+`^` is calculated first, then `*` and `/`, finally `+` and `-`.
+
+TIP: The `*` symbol, called asterisk, can be five-pointed, six-pointed or eight-pointed depending on the font.
+For handwriting, all of them are acceptable.
+
+<<<
+=== Class work
+
+Evaluate the following expressions:
+
+[options="header", cols="2l, 1, 2l, 1"]
+|===
+|VB expression |Result |VB expression |Result
+|3 + 6 |
+|3 - 6 |
+|3 * 6 |
+|15 / 7 |
+|2 ^ 5 |
+|5 ^ 2 |
+|3 ^ (5 - 2) |
+|3 + 4 * 5 |
+|===
+
+
+== Parentheses
+
+Parentheses (or round brackets) are used to change the order of operations.
+Other kinds of brackets are not accepted in Visual Basic.
+
+IMPORTANT: Do not forget to add a pair of parentheses for division. +
+           E.g. $$ \frac{a}{b+c} $$ should be `a/(b+c)` but not `a/b+c`.
+
+=== Class work
+
+Convert the following formulae into Visual Basic code:
+
+[options="header", cols="1, 2l"]
+|===
+|Mathematical formula |VB statement
+| $$ a=b+c $$ | a = b + c
+| $$ D=b^4 $$ |
+| $$ x=90(n-1) $$ |
+| $$ p=\frac{q}{(1+r)} $$ |
+| $$ A = P \left( 1 + \frac{r}{n} \right)^{nt} $$ |
+|===

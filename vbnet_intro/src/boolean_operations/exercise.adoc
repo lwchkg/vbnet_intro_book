@@ -1,0 +1,66 @@
+= {{ page.title }} {% autochapter %}2{% endautochapter %}
+
+[large-gaps]
+. Convert the following mathematical expressions to Visual Basic conditions:
++
+[options="header", cols="^,l"]
+|===
+|Mathematical expression |Visual Basic condition
+|$$50 \le y < 60$$ |
+|$$-1 < b < 1$$ |
+|$$p \ge q \ge r > 0$$ |
+|===
+
+. Write down the following conditions without using the Not operator:
++
+[options="header", cols="5l,4l"]
+|===
+|Condition |Without Not operator
+|Not (marks >= 0 And marks \<= 100) |
+|Not (num < 0 Or num >=10) |
+|===
+
+. Ask the user to input the age and sex.
+  Determine the result based on the table below:
++
+[options="header", cols="^,^,^"]
+|===
+|Age / Sex |M |F
+|$$\ge 18$$ |Man |Woman
+|$$< 18$$ |Boy |Girl
+|===
++
+The output of the program should be the same as the following: +
+(Note: replace “man” by the words above.)
++
+[role="sample-output", subs="normal"]
+....
+Enter your age: [userinput]#18#
+Enter your sex (M/F): [userinput]#M#
+
+You are a man.
+....
+
+. The examination of the Computer subject in Acme School consists of two papers: theory and practical.
+  The full marks are 100 in both papers.
+  Write a program to calculate the overall grades, which is listed in the following table.
++
+[options="header", cols="2,^1"]
+|===
+|Condition |Grade
+|Less than 50 marks in any of the papers +
+ (regardless of all other conditions) |Fail
+|Having 80 or more marks in both papers |Distinction
+|Having an average mark of 70 or above |Merit
+|Otherwise |Pass
+|===
++
+The output of the program should be the same as the following:
++
+[role="sample-output", subs="normal"]
+....
+Enter the mark of theory exam: [userinput]#80#
+Enter the mark of practical exam: [userinput]#65#
+
+The grade is Merit.
+....

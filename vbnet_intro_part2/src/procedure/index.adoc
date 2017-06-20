@@ -1,0 +1,10 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+When we perform some operations repeatedly, we group the operations together into procedures.
+This avoids the problem of copying the same, or similar code, everywhere in your source.
+
+In Visual Basic.NET, a procedure that returns a value is called a `Function`, and a procedure without a return value is called a `Sub`.
+
+You have already encountered a few procedures before.
+`Sub Main()`, `Console.WriteLine`, `Console.Write` and `Console.ReadLine` are all procedures.

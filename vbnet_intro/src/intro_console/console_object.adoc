@@ -1,0 +1,139 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+In VB.NET the console is accessed by the `Console` object. It has the following methods:
+
+[options="header", cols="1, 3, 3l"]
+|===
+|Method|Description|Example
+
+|WriteLine
+|Outputs a string to the console, and moves the cursor to the next line.
+|Console.WriteLine("str")
+Console.WriteLine()
+
+|Write
+|Outputs a string to the console, but do not move the cursor to the next line.
+|Console.Write("str")
+
+|Clear
+|Clear the content of the console. Also moves the cursor to the top-left corner.
+|Console.Clear()
+
+|ReadLine
+|Reads a line from the console (press `Enter` to finish input). In this book,
+ReadLine method is also used to prevent the console from closing after running
+the program.
+|Dim s As String
+s = Console.ReadLine()
+|===
+
+== Console.WriteLine and Console.Write
+
+`Console.WriteLine` and `Console.Write` are used to output text to the console.
+These methods has only one difference: `Console.WriteLine` moves the cursor to the next line, while `Console.Write` does not.
+
+Calling `Console.WriteLine` without any argument simply moves the cursor to the next line.
+
+The next example shows the differences of Console.WriteLine and Console.Write.
+
+[include, lang-vb](code/console_writeline_and_write.vb)
+
+See the output below to check your understanding of the example.
+
+[role="sample-output"]
+....
+Console.WriteLine results
+=========================
+Item 1
+2.345
+Item 3
+Item 4
+
+
+Console.Write results
+=====================
+Item 12.345Item 3Item 4
+....
+
+<<<
+=== Class work
+
+Write a program that produces the given output. Use `Console.WriteLine` only.
+
+[options="header", cols=".<1l,2l"]
+|===
+|Output|Visual Basic Program
+|This is my first
+console program.
+
+It is easy!
+|Sub Main()
+
+
+
+
+
+
+End Sub
+|===
+
+
+=== Substitutions in the Console.WriteLine and Console.Write
+
+If `{0}`, `{1}`, `{2}`, ... are found in the string, it is replaced by following arguments
+(i.e. the things inside `Console.WriteLine` and the like, separated by commas).
+
+Since the output string is the first argument, `{0}` is replaced by the content of the second argument, `{1}` by the third argument, etc. Here is an example:
+
+[include, lang-vb](code/console_writeline_substitutions.vb)
+
+And here is the output:
+
+[role="sample-output", subs="normal"]
+....
+David and Peter are good friends.
+9 * 9 = 81
+....
+
+
+<<<
+== Console.Clear
+
+`Console.Clear` is used to clear the content of the console.
+After the console is cleared, the cursor goes to the top-left corner.
+`Console.Clear` is introduced in this book only for completeness, i.e. it is not used in this book.
+
+
+== Console.ReadLine
+
+The Console.ReadLine method reads a line of characters from the console and returns a string.
+To add a prompt, use Console.Write immediately before Console.ReadLine.
+
+A typical use of Console.ReadLine is as follows:
+
+[source, vb]
+....
+Console.Write("Enter the number n: ")
+Dim n As Integer = Console.ReadLine()
+Console.WriteLine("The value of n is {0}.", n)
+
+Console.ReadLine()
+....
+
+If the user enters “100” in the input, the output is:
+
+[role="sample-output", subs="normal"]
+....
+Enter the number n: [userinput]#100#
+The value of n is 100.
+....
+
+In this book, `Console.ReadLine()` is also used to prevent the program from closing.
+
+
+[TIP]
+====
+If `Console.ReadLine()` is missing before the end of the program, the program is closed immediately after running.
+If you are using Visual Studio, you will not be able to read the output of the program.
+====

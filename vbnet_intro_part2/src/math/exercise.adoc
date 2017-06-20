@@ -1,0 +1,46 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+[large-gaps]
+. Write a program that calculates the total surface area of a circular cone.
+  The formula of the total surface area is $$ \pi r \left( \sqrt{r^2 + h^2} + r \right)$$, where $$ r $$ is the base radius, and $$ h $$ is the height.
++
+Round off the answer to four decimal places.
+The output of the program should match the sample below:
++
+[role="sample-output", subs="normal"]
+....
+Enter the base radius: [userinput]#1.2#
+Enter the height: [userinput]#3.4#
+The total surface area is 18.1165 square units.
+....
+
+
+. Write a program to check if a non-negative integer is a square number.
+  The program should not accept decimals or negative numbers.
++
+The output of the program should match the sample below:
++
+[role="sample-output", subs="normal"]
+....
+Enter a number: [userinput]#2#
+2 is NOT a square number.
+....
++
+[role="sample-output", subs="normal"]
+....
+Enter a number: [userinput]#25#
+25 is a square number.
+....
++
+[role="sample-output", subs="normal"]
+....
+Enter a number: [userinput]#-3#
+You should enter a non-negative integer.
+....
++
+[role="sample-output", subs="normal"]
+....
+Enter a number: [userinput]#6.25#
+You should enter a non-negative integer.
+....

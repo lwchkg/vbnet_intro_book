@@ -1,0 +1,39 @@
+= {{ page.title }} {% autochapter %}2{% endautochapter %}
+
+[large-gaps]
+. Write a program in which the user enters a number.
+  If $$ x^3 - x \ge 100 $$, output “`A big number!`”, otherwise output “`A small number!`”.
+
+. Write a program in which the user enters the amount of pocket money he/she spends per week.
+  The program will output a message according to the table below:
++
+[options="header", cols="^1,2"]
+|===
+|Pocket Money ($) |Message
+|$$0$$ |You didn't spend any money. Are you lying?
+|$$>0$$ {nbsp}{nbsp}and{nbsp}{nbsp} $$<100$$ |Below average. What a good student!
+|$$\ge 100$$ {nbsp}{nbsp}and{nbsp}{nbsp} $$<200$$ |Average.
+|$$\ge 200$$ |Above average. Consider to spend less!
+|===
+
+. *BMI Calculator*:
+  The Body Mass Index (BMI) is a method to see if you are overweight or underweight.
+  Your program should receive two inputs: mass (in kg) and height (in cm).
+  Calculate the BMI by to the formula
+  $$ \text{BMI} = \dfrac{\text{mass (in kg)}}{[ \text{height (in m} ^2 \text{)} ]^2} $$.
+  (Be careful with the unit!!!) +
+  Finally, your program should determine the result according to the following table:
++
+[options="header", cols="^1,2"]
+|===
+|BMI |Classification
+|< 18.5 |Underweight
+|18.5 – 23.9 |Average
+|24.0 – 27.9 |Overweight
+|>= 28 |Obese
+|===
++
+(Note: what should be classification if BMI = 23.91?)
+
+. Write a program that the user will enter his/her marks in Chinese, English and Mathematics subjects.
+  Then output the number of subjects that he/she has failed (i.e. marks less than 50).

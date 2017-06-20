@@ -1,0 +1,70 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+*Relational operators* (or comparison operators) are the equality signs and inequality signs in Mathematics.
+This is evaluated to one of the Boolean values.
+If the equality or the inequality is satisfied, then the result is `True`, otherwise the result is `False`.
+Here is the list of the relational operators:
+
+[options="header", cols="^1l, 2, 1l, 1"]
+|===
+|Operator |Meaning |Example |Result
+|= |Equal to |9 = 11 |
+|> |Greater than |11 > 9 |
+|< |Less than |11 < 9 |
+|>= |Greater than or equal to | 15 >= 15 |
+|\<= |Less than or equal to |9 \<= 15 |
+|<> |Not equal to |9 <> 9 |
+|===
+
+
+== Class work
+
+Convert the following comparison into Visual Basic code:
+
+[options="header", cols="3, 2l"]
+|===
+|Comparison |VB code
+| Is Peter (`PHeight`) taller than Mary (`MHeight`)? |
+| Is Linda’s age (`LAge`) not equal to May’s age (`MAge`)? |
+| The passing mark is 50. Has Gigi (`GMark`) failed the test? |
+| It is free to travel by MTR for a person with height 100 cm or below. Is it free for Kitty (`KHeight`) to travel by MTR? |
+|===
+
+
+<<<
+== Law of trichotomy
+
+For numbers _a_ and _b_, exactly one of the following holds:
+
+* _a_ > _b_;
+* _a_ = _b_; or
+* _a_ < _b_.
+
+This is known as the law of trichotomy.
+It holds for every kind of quantity that has order, including `Integer`, `String` and `Boolean` in Visual Basic.
+
+However, there is an special value called NaN (not a number) for `Single` and `Double`.
+Since NaN is not a number, _a_ > _b_, _a_ = _b_ and _a_ < _b_ are all false.
+Law of trichotomy works only if you ignore the case of NaN.
+In fact, comparison of floating point numbers is a complex topic of its own.
+
+
+== Logical opposites of relational operators
+
+Every relational operator corresponds to one or two possibilities of the law of trichotomy.
+By picking up the remaining possibilities, we obtain the logical opposite of the relational operator.
+
+[options="header", cols="^1l, ^1l"]
+|===
+|Operator |Logical opposite
+|= |
+|> |
+|< |
+|>= |
+|\<= |
+|<> |
+|===
+
+
+NOTE: Logical opposites works only if the quantity under comparison has order.

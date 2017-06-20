@@ -1,0 +1,42 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+One of the most common operations in a program is to increase and decrease the value of a variable.
+See the following example for an idea.
+
+[source, vb]
+....
+' Assigns the value 10 to the variable.
+applesSold = 10
+' The following statement increases "applesSold" by one.
+applesSold = applesSold + 1
+' The variable now holds the value 11.
+....
+
+In the example, the statement `applesSold = applesSold + 1` increases the value of the variable `applesSold` by 1.
+You may also write `applesSold += 1` instead, i.e.
+
+[source, vb]
+....
+' Assigns the value 10 to the variable.
+applesSold = 10
+' The following statement increases "applesSold" by one.
+applesSold += 1
+' The variable now holds the value 11.
+....
+
+In the second example, `+=` is an *assignment operator*, which adds a certain value to a variable.
+`-=`, `*=`, `/=`, `\=`, `^=` and `&=` are also assignment operators, which have similar meanings.
+
+
+== Class Work
+
+Express the following actions into VB.NET code:
+[options="header", cols="1, 1l"]
+|===
+|Action |VB.NET statement
+|Increase `x` by 100 |
+|Decrease `y` by 5 |
+|Multiple `product` by -3 |
+|Add “sugar” to the end of the `str1` |
+|===

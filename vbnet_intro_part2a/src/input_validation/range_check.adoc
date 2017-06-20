@@ -1,0 +1,41 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+Doing a range check is simple.
+All you need to do is shown in the following example:
+
+[source, vb]
+....
+Sub Main()
+    ' Preceding code (omitted)
+    If month < 1 Or month > 12 Then
+        Console.Write("The month should be between 1 and 12.")
+        Return
+    End If
+    ' Succeeding code (omitted)
+End Sub
+....
+
+The `If` block containing the `Return` statement is called a *guard clause*.
+When validation fails, the guard clause can be used for early exit.
+
+However, range check is best done with procedures to improve readability:
+
+[source, vb]
+....
+Function IsValidMonth(month As Integer) As Boolean
+    Return month >= 1 And month <= 12
+End Function
+
+Sub Main()
+    ' Preceding code (omitted)
+    If Not IsValidMonth(month) Then
+        Console.Write("The month should be between 1 and 12.")
+        Return
+    End If
+    ' Succeeding code (omitted)
+End Sub
+....
+
+Using procedures for validation has the advantage of code reuse.
+This also allows complex validation (e.g. whether a day, month and year combination forms a valid date) to be coded effectively.

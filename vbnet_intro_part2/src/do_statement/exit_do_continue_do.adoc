@@ -1,0 +1,143 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+`Exit Do` means to exit the `Do`...`Loop` statement immediately.
+Control is transferred to the statement after the loop.
+
+`Continue Do` means to bypass everything in the current iteration.
+Control goes to the next iteration if the loop condition is satisfied.
+
+== Example: total and average marks
+
+[source, vb]
+....
+Dim totalMarks As Double = 0
+Dim numSubjects As Integer = 0
+
+Do
+    Console.Write(
+        "Enter the mark of the next subject (-1 to quit): ")
+    Dim mark As Double = Console.ReadLine()
+
+    If mark = -1 Then
+        Exit Do
+    End If
+
+    If mark < 0 Or mark > 100 Then
+        Console.WriteLine("Invalid mark ignored.")
+        Continue Do
+    End If
+
+    totalMarks += mark
+    numSubjects += 1
+Loop
+
+Console.WriteLine()
+Console.WriteLine("Number of subjects: {0}", numSubjects)
+Console.WriteLine("Total marks: {0}", totalMarks)
+Console.WriteLine("Average mark: {0}", totalMarks / numSubjects)
+Console.ReadLine()
+....
+
+[role="sample-output", subs="normal"]
+....
+Enter the mark of the next subject (-1 to quit): [userinput]#23#
+Enter the mark of the next subject (-1 to quit): [userinput]#80#
+Enter the mark of the next subject (-1 to quit): [userinput]#106#
+Invalid mark ignored.
+Enter the mark of the next subject (-1 to quit): [userinput]#66.5#
+Enter the mark of the next subject (-1 to quit): [userinput]#-1#
+
+Number of subjects: 3
+Total marks: 169.5
+Average mark: 56.5
+....
+
+[TIP]
+====
+* `Exit Do` and `Continue Do` are usually used with `If`...`Then` statements.
+* Use `Exit Do` if you want to quit a loop in the middle of an iteration.
+* Use `Continue Do` to skip data that you do not want to process.
+====
+
+<<<
+== Example: high-low guessing game
+
+Finally we have a more advanced example: a game utilizing everything we have learnt.
+Try to figure out the logic behind the game!
+
+[source, vb, role="small"]
+....
+Function GetRandomInteger() As Integer
+    Return CInt(Int(Rnd() * 100)) + 1
+End Function
+
+Sub Main()
+    Randomize()
+
+    Console.WriteLine("Number guessing game")
+    Console.WriteLine("====================")
+    Console.WriteLine("The computer will pick and show a random number from 1 to 100.")
+    Console.WriteLine("You need to guess whether the next number is higher or lower.")
+    Console.WriteLine("Try to guess correctly as long as you can.")
+    Console.WriteLine()
+
+    Dim score As Integer = 0
+    Dim num As Integer = GetRandomInteger()
+    Do
+        Console.Write("The number is {0}. Higher / lower (H/L)? ", num)
+        Dim choice As String = Console.ReadLine()
+        Do While choice <> "H" And choice <> "h" And choice <> "L" And choice <> "l"
+            Console.Write("Please enter ""H"" or ""L"". Higher / lower (H/L)? ")
+            choice = Console.ReadLine()
+        Loop
+
+        Dim nextNum As Integer = GetRandomInteger()
+        If nextNum = num Then
+            Console.WriteLine("The number is {0}. You lose no matter what you guess!",
+                              nextNum)
+            Exit Do
+        End If
+        If nextNum > num And (choice <> "H" And choice <> "h") Or
+           nextNum < num And (choice <> "L" And choice <> "l") Then
+            Console.WriteLine("The number is {0}. You have lost!", nextNum)
+            Exit Do
+        End If
+
+        num = nextNum
+        score += 1
+    Loop
+
+    Console.WriteLine()
+    Console.WriteLine("Your score: {0}", score)
+    Console.ReadLine()
+End Sub
+....
+
+[role="sample-output", subs="normal"]
+....
+Number guessing game
+====================
+The computer will pick and show a random number from 1 to 100.
+You need to guess whether the next number is higher or lower.
+Try to guess correctly as long as you can.
+
+The number is 23. Higher / lower (H/L)? [userinput]#H#
+The number is 37. Higher / lower (H/L)? [userinput]#S#
+Please enter "H" or "L". Higher / lower (H/L)? [userinput]#H#
+The number is 93. Higher / lower (H/L)? [userinput]#L#
+The number is 78. Higher / lower (H/L)? [userinput]#L#
+The number is 29. Higher / lower (H/L)? [userinput]#H#
+The number is 47. Higher / lower (H/L)? [userinput]#L#
+The number is 4. Higher / lower (H/L)? [userinput]#H#
+The number is 47. Higher / lower (H/L)? [userinput]#H#
+The number is 40. You have lost!
+
+Your score: 7
+....
+
+[TIP]
+====
+Feel free to use `Exit Do` and `Continue Do` to express your intent in the code.
+You should write the exact logic you are thinking of.
+====

@@ -1,0 +1,168 @@
+= {% autotitle %}{% endautotitle %}
+
+In Visual Basic, you use variables to store values.
+Variables have a name and a data type.
+
+==	Declaring variables with Dim statement
+Before you use a variable, you should tell Visual Basic in advance, using the `Dim` statement:
+
+....
+Dim variablename [As type]
+....
+
+The data type of the variable can be one of the following:
+[options="header", cols="1,4"]
+|===
+|Data type | Description
+|Integer
+|Integer (between -2,147,483,648 through 2,147,483,647)
+|Single
+|Single-precision floating point (about 7 significant figures).
+|Double
+|Double-precision floating point (about 16 significant figures).
+|Boolean
+|Either `True` or `False`
+|String
+|Text (holds your name, ID card number, etc…)
+|===
+
+See the following example for their use:
+
+[source, vb]
+....
+Dim score As Integer
+Dim weight As Double
+Dim finished As Boolean
+Dim name As String
+....
+
+<<<
+=== Class work
+
+Determine the correct data type(s) for the following data, and write down a Dim statement, where the name of the variable is the underlined word.
+[options="header", cols="3,1,3"]
+|===
+|Description of data |Data type |Dim statement
+|The [underlined]_height_ of a student (in cm). ||
+|The [underlined]_marks_ of a test. ||
+|The academic [underlined]_grade_ of a student. ||
+|The [underlined]_age_ of your father. ||
+|Whether you are [underlined]_wealthy_. ||
+|===
+
+== Keywords and names of variables
+Some words have special meanings in Visual Basic, such as `Dim`, `As`, `Integer`, `Double`, `Boolean`, and `String`.
+These words are known as keywords, or reserved keywords.
+The list of Visual Basic keywords in Visual Studio 2015 can be found in https://msdn.microsoft.com/en-us/library/dd409611(v=vs.140).aspx
+The name of a variable cannot be any of the reserved keywords.
+
+In addition, it must obey the following rules:
+
+* It must begin with an alphabetic character or an underscore (`_`).
+* It must only contain alphabetic characters, decimal digits, and underscores.
+* It must contain at least one alphabetic character or decimal digit.
+
+
+<<<
+== Giving values to variables in the Dim statement
+
+We can assign a value to a variable in the same `Dim` statement.
+This is a good practice in programming because it eliminates potential mistakes.
+
+[source, vb]
+....
+Dim score As Integer = 0
+Dim weight As Double = 129.3
+Dim finished As Boolean = False
+Dim name As String = "Chan Tai Man"
+....
+
+
+== Declaring several variables in a single line
+We can declare several variables in a single Dim statement.
+However, if two or more variables are present in one `As` clause, we cannot assign values to these variables at the same time.
+
+[source, vb]
+....
+Dim a, b, c As Single, x, y As Double, i As Integer
+' a, b, and c are all Single; x and y are both Double
+....
+
+
+== Using variables to store values
+We can assign a value to a variable with the equal sign (`=`).
+Once a new value is stored in the variable, the old value is forgotten.
+See the example below:
+
+[source, vb]
+....
+Dim x, y As Integer
+x = 5       ' x is set to 5
+y = 3       ' y is set to 3
+x = 2       ' x becomes 2, y is unchanged
+y = x + 2   ' y becomes (x+2)=(2+2)=4, x is unchanged
+x = y + 3   ' x becomes (y+3)=(4+3)=7, y is unchanged
+....
+
+
+<<<
+=== Class work
+
+With reference to the programs below, write down the values of the variables *after* the execution of each of the statements.
+
+[options="header", cols="3a, ^1l, ^1l, ^1l"]
+|===
+|Program |Value of a |Value of b |Value of t
+|[source, vb]
+Dim t As Integer
+| --- | --- | ---
+
+|[source, vb]
+Dim a As Integer = 2
+|2 | --- | ---
+
+|[source, vb]
+Dim b As Integer = 6
+|2 |6 | ---
+
+|[source, vb]
+t = a
+|||
+
+|[source, vb]
+a = b
+|||
+
+|[source, vb]
+b = t
+|||
+|===
+
+
+[options="header", cols="2a, ^1l, ^1l"]
+|===
+|Program |Value of p |Value of q
+|[source, vb]
+Dim p As Double = 3
+|| ---
+
+|[source, vb]
+Dim q As Double = 4.5
+||
+
+|[source, vb]
+q = p - 0.5
+||
+
+|[source, vb]
+p = 2
+||
+
+|[source, vb]
+p = (p + q) / 2
+||
+
+|[source, vb]
+q = (p - q) / 2
+||
+|===

@@ -1,0 +1,166 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+To learn looping it is easiest to learn by examples.
+
+== Example: playing a game again
+
+In this example, the computer ask whether a user should play a game again or not.
+If the user presses “Y”, then the game is played again.
+Otherwise, the game quits.
+
+[source, vb]
+....
+Sub Main()
+    Randomize()
+    Console.WriteLine("Lucky dice - you win if you roll a 6.")
+
+    Dim playAgain As String
+    Do
+        Dim die As Integer = CInt(Int(Rnd() * 6)) + 1
+        If die = 6 Then
+            Console.WriteLine("You have rolled 6! You win!")
+        Else
+            Console.WriteLine("You have rolled {0}. You lose!",
+                              die)
+        End If
+
+        Console.Write("Do you want to play again? (Y/N) ")
+        playAgain = Console.ReadLine()
+    Loop While playAgain = "Y" Or playAgain = "y"
+End Sub
+....
+
+[role="sample-output", subs="normal"]
+....
+Lucky dice - you win if you roll a 6.
+You have rolled 4. You lose!
+Do you want to play again? (Y/N) [userinput]#Y#
+You have rolled 5. You lose!
+Do you want to play again? (Y/N) [userinput]#y#
+You have rolled 6! You win!
+Do you want to play again? (Y/N) [userinput]#n#
+....
+
+<<<
+Some of you might have asked: what will happen if I enter something other than “Y” or “N”?
+In the program above, it simply treats the answer as an “N”.
+
+Of course, you may like to repeat the question in this case.
+This can be done with *nested loops*.
+For example:
+
+[source, vb]
+....
+Sub Main()
+    Randomize()
+    Console.WriteLine("Lucky dice - you win if you roll a 6.")
+
+    Dim playAgain As String
+    Do
+        Dim die As Integer = CInt(Int(Rnd() * 6)) + 1
+        If die = 6 Then
+            Console.WriteLine("You have rolled 6! You win!")
+        Else
+            Console.WriteLine("You have rolled {0}. You lose!",
+                              die)
+        End If
+
+        Do
+            Console.Write("Do you want to play again? (Y/N) ")
+            playAgain = Console.ReadLine()
+        Loop Until playAgain = "Y" Or playAgain = "y" Or
+                   playAgain = "N" Or playAgain = "n"
+    Loop While playAgain = "Y" Or playAgain = "y"
+End Sub
+....
+
+[role="sample-output", subs="normal"]
+....
+Lucky dice - you win if you roll a 6.
+You have rolled 3. You lose!
+Do you want to play again? (Y/N) [userinput]#ab#
+Do you want to play again? (Y/N) [userinput]#yes#
+Do you want to play again? (Y/N) [userinput]#y#
+You have rolled 2. You lose!
+Do you want to play again? (Y/N) [userinput]#no#
+Do you want to play again? (Y/N) [userinput]#n#
+....
+
+
+<<<
+
+To make the program more maintainable, we can break down the program into procedures.
+Besides being easier to read, individual procedure can also be copied into different programs, saving time for development.
+
+For example, the previous program can be rewritten in the following way:
+
+[source, vb]
+....
+Sub DoLuckyDraw()
+    Dim die As Integer = CInt(Int(Rnd() * 6)) + 1
+    If die = 6 Then
+        Console.WriteLine("You have rolled 6! You win!")
+    Else
+        Console.WriteLine("You have rolled {0}. You lose!", die)
+    End If
+End Sub
+
+Function ShouldPlayAgain() As Boolean
+    Dim playAgain As String
+    Do
+        Console.Write("Do you want to play again? (Y/N) ")
+        playAgain = Console.ReadLine()
+    Loop Until playAgain = "Y" Or playAgain = "y" Or
+           playAgain = "N" Or playAgain = "n"
+    Return playAgain = "Y" Or playAgain = "y"
+End Function
+
+Sub Main()
+    Randomize()
+    Console.WriteLine("Lucky dice - you win if you roll a 6.")
+    Do
+        DoLuckyDraw()
+    Loop While ShouldPlayAgain()
+End Sub
+....
+
+
+<<<
+== Example: reversing the digits of an integer
+
+The following example shows how a `Do`...`Loop` statement is used to do calculations.
+Note: arguments are passed to `reverseDigits` by value.
+
+[source, vb]
+....
+Function reverseDigits(n As Integer) As Integer
+    Dim reversed As Integer = 0
+    Do While n > 0
+        Dim digit = n Mod 10
+        n \= 10
+        reversed = reversed * 10 + digit
+    Loop
+    Return reversed
+End Function
+
+Sub Main()
+    Console.Write("Enter an integer: ")
+    Dim n As Integer = Console.ReadLine()
+    Console.WriteLine(
+        "After reversing the digits, the result is {0}.",
+        reverseDigits(n))
+    Console.ReadLine()
+End Sub
+....
+
+[role="sample-output", subs="normal"]
+....
+Enter an integer: 13579
+After reversing the digits, the result is 97531.
+....
+
+[TIP]
+====
+It is easier to get the last digit of an integer than the first digit.
+====

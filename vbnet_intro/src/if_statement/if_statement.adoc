@@ -1,0 +1,59 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+An `If`...`Then`...`Else` statement conditionally executes a group of statements, depending on the value of an expression.
+(See the flowchart below.)
+
+
+The basic syntax of `If`...`Then`...`Else` statement is listed here.
+
+[source, vb]
+....
+If condition Then
+    Statement1
+    Statement2
+    ...
+Else
+    Statement3
+    Statement4
+    ...
+End If
+....
+
+TIP: A *condition* is an expression that evaluates to a Boolean value, and this is often a single Boolean variable (with its value calculated before).
+
+Sometimes we do not want to execute anything when the condition is false.
+In this case, we can skip the section starting with `Else`, i.e.
+
+[source, vb]
+....
+If condition Then
+    Statement1
+    Statement2
+    ...
+End If
+....
+
+The following example shows the use of If...Then...Else statements:
+
+[source, vb]
+....
+Console.Write("Enter the marks:")
+Dim marks As Integer = Console.ReadLine()
+Dim result As String
+If marks >= 50 Then
+    result = "pass"
+Else
+    result = "fail"
+End If
+Console.WriteLine("You have got a {0}.", result)
+Console.ReadLine()
+....
+
+In the above example, if the marks is 50 or above, the output is “`You have got a pass.`”
+Otherwise (i.e. marks less than 50), the result is “`You have got a fail.`”
+
+Here is a flowchart of the program:
+
+[.text-center]
++++{% include "../diagrams/if-marks.svg" %}+++

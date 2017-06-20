@@ -1,0 +1,36 @@
+{
+  "gitbook": ">=3.1.0",
+  "root": "src",
+  "title": "Introduction to Visual Basic",
+  "plugins": [
+    "-fontsettings",
+    "-highlight",
+    "sunlight-highlighter",
+    "include-codeblock",
+    "styles-less",
+    "katex",
+    "page-numbering"
+  ],
+  "styles": {
+    "website": "styles/website.less",
+    "pdf": "styles/pdf.less",
+    "epub": "styles/epub.less",
+    "mobi": "styles/mobi.less",
+    "ebook": "styles/ebook.less"
+  },
+  "pluginsConfig": {
+    "page-numbering": {
+      "skipReadme": true
+    }
+  },
+  "wkhtmltopdf": {
+    "cover": "cover.html",
+    "tocXsl": "styles/wk_toc.xsl",
+    "header": {"contentHtml": "styles/wk_header.html"},
+    "assets": [
+      "styles/wk_headerfooter.less",
+      "styles/wk_toc.less",
+      "styles/wk_toc.xsl"
+    ]
+  }
+}

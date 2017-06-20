@@ -1,0 +1,11 @@
+= {{ page.title }}
+:icons: font
+
+This book introduces VB.NET.
+
+// Uncomment the following lines if fonts are missing.
+[.phantom]
+icon:tags[] a _a_ `a` $$\left( \frac{a}{1^2} \right)$$
+
+[.phantom.sans]
+123

@@ -1,0 +1,124 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+This chapter introduces some mathematical functions and constants used in VB.NET.
+
+== Mathematical functions
+
+[options="header", cols="3l,6,6l,^2l"]
+|===
+|Function |Description |Example |Result
+
+|Math.Sqrt
+|Finds the square root.
+|Math.Sqrt(4)
+|2
+
+|Math.Max
+|Returns the larger of two numbers.
+|Math.Max(2, 5)
+|5
+
+|Math.Min
+|Returns the smaller of two numbers.
+|Math.Min(2, 5)
+|2
+
+|Math.Round
+|Rounds off to the nearest integer, or to a specified number of decimal places.
+|Math.Round(11.56)
+Math.Round(11.56, 1)
+|12
+11.5
+
+|Math.Floor
+(or Int)
+|Rounds down to the nearest integer.
+|Math.Floor(2.3)
+Math.Floor(-2.3)
+|2
+-3
+
+|Math.Ceiling
+|Rounds up to the nearest integer.
+|Math.Ceiling(2.3)
+Math.Ceiling(-2.3)
+|3
+-2
+
+|Math.Truncate
+(or Fix)
+|Finds the integral part.
+|Math.Floor(2.3)
+Math.Floor(-2.3)
+|2
+-2
+
+|Math.Abs
+|Finds the absolute value (remove negative sign).
+|Math.Abs(-4)
+Math.Abs(3)
+|4
+3
+
+|Math.Sign
+|The sign of the number (positive: 1, zero: 0, negative: -1).
+|Math.Sign(-5)
+|-1
+
+|===
+
+<<<
+== Mathematical constants
+
+[options="header", cols="3l,6,3l,^5l"]
+|===
+|Constant |Description |Data type |Value
+
+|Math.PI
+|The value of $$\pi$$.
+|Double
+|3.141592653589793
+
+|===
+
+
+== Data types used in mathematics functions
+
+Here are the data types of the inputs and outputs of the mathematical functions.
+
+[options="header", cols="6,6,4"]
+|===
+|Function |Input data type |Output data type
+
+|`Math.Sqrt`, `Math.Round`, `Math.Floor`, `Math.Ceiling`
+|`Double` |Same as the input
+
+|`Math.Max`, `Math.Min`
+|`Double`, `Single`, `Integer` +
+Note: both inputs must have the same data type.
+|Same as the input
+
+|`Math.Abs`, `Int`, `Fix`
+|`Double`, `Single`, `Integer` |Same as the input
+
+|`Math.Sign`
+|`Double`, `Single`, `Integer` |`Integer`
+|===
+
+
+<<<
+== Class Work
+
+Convert the following expressions into VB.NET statement
+
+[options="header", cols="1,1l"]
+|===
+|Mathematical expression |VB.NET statement
+|$$a = \sqrt{x + 1}$$ | a = Math.Sqrt(x + 1)
+|$$r = \sqrt{x^2+x-3}$$ |
+|$$V = \dfrac{4}{3} \pi r^3$$ [Take $$\pi$$ = `Math.PI`] |
+|$$a = max(x,y^2-1)$$ |
+|$$p = min(0.5, \sqrt{1-x^2})$$ |
+|$$x = \sqrt{1+\sqrt{1+a}}$$ |
+|===

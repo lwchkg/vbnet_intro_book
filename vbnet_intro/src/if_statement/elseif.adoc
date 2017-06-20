@@ -1,0 +1,53 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+To get more than two outcomes, additional conditions using the keyword `ElseIf` (else and if together in one word) can be added.
+
+[source, vb]
+....
+If condition1 Then
+    Statement1
+    ...
+ElseIf condition2 Then
+    Statement2
+    ...
+(more ElseIf conditionals if applicable)
+Else
+    Statement3
+    ...
+End If
+....
+
+
+To see how the keyword `ElseIf` works, see the example below:
+
+[source, vb]
+....
+Console.Write("Enter the marks: ")
+Dim marks As Integer = Console.ReadLine()
+
+Dim grade As String
+If marks >= 80 Then
+    grade = "A"
+ElseIf marks >= 70 Then
+    grade = "B"
+ElseIf marks >= 50 Then
+    grade = "C"
+Else
+    grade = "D"
+End If
+Console.WriteLine("Your grade is {0}.", grade)
+Console.ReadLine()
+....
+
+In the example, the marks are used to determine the grade.
+When we check for the second condition, i.e. `marks >= 70`, we already know that `marks >= 80` is false.
+Therefore, only people with marks from 70 to 79 get a grade of “B”.
+
+(Note: In this example, the marks are integers.
+This is NOT true in Tang Hin, where the marks are correct to 2 decimal places.)
+
+Here is a flowchart of the program:
+
+[.text-center]
++++{% include "../diagrams/if-marks-2.svg" %}+++

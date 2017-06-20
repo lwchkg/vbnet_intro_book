@@ -1,0 +1,21 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+Random numbers are an important aspect of programs.
+In computer games, random numbers are used to simulate dice.
+Some algorithms requires the use of random numbers to do calculations.
+Random numbers are also used to generate the secret keys, which is needed for encryption to work.
+
+
+== How do computer generate random numbers
+
+There are two kinds of random number generators.
+The first kind is called *pseudo-random number generators (PRNGs)*, which does not use a real random source.
+Randomness is simulated using an algorithm.
+
+The second kind of random number generator gather randomness (or entropy) from some physical phenomenon, such as radioactive source or atmospheric noise.
+This kind of generators provides true randomness comparable to dice.
+However, the speed of generation of randomness is slow.
+
+In VB.NET, two PRNGs are provided in the language.
+We will study one of them: `Rnd()` and `Randomize()`, to learn how to use random numbers in programs.

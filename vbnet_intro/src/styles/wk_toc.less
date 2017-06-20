@@ -1,0 +1,36 @@
+@import "ebook.less";
+
+.toc { padding-left: 0; }
+
+li { list-style: none; }
+li:before {
+  position: absolute;
+  width: 95%;
+  overflow: hidden;
+  z-index: -1;
+  white-space: nowrap;
+  content:
+    ". . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . "
+}
+
+/* overwrite the dots in li:before */
+span { background-color: white; }
+.content { padding-right: 0.5em; }
+.page-number { float: right; padding-left: 0.5em; }
+
+/* Separator between chapter number and main item */
+.sep { margin-left: 2em; }
+
+a {text-decoration:none; color: black;}
+
+/* Content levels */
+.level-1 { font-size: 125%; margin-top: 1em; }
+.level-2 {
+  margin-top: 0.25em;
+  .content { padding-left: 2em; }
+}

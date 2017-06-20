@@ -1,0 +1,37 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+Here is the official syntax of the If…Then…Else statement.
+The parts inside [] are optional.
+
+[source, vb]
+....
+If condition [ Then ]
+    [ statements ]
+[ ElseIf elseifcondition [ Then ]
+    [ elseifstatements ] ]
+[ Else
+    [ elsestatements ] ]
+End If
+-or-
+If condition Then [ statements ] [ Else [ elsestatements ] ]
+....
+
+When you enter your code into the Visual Basic IDE, it will do the following changes automatically:
+
+* Add the missing keyword `Then`
+* Change `Else If` into `ElseIf`
+* Change `EndIf` into `End If`
+
+[WARNING]
+====
+If you are not using Visual Studio, do not write `Else If` or `EndIf`.
+They will result in compile errors.
+====
+
+And here is an example of the single line syntax.
+The symbol “`:`” is used to separate multiple statements.
+(Note: you may use “`:`” outside the If…Then…Else statement.)
+
+[source, vb]
+If A > 10 Then A = A + 1 : B = B + A : C = C + B

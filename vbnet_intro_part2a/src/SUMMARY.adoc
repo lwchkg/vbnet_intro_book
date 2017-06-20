@@ -1,0 +1,15 @@
+= Summary
+
+* link:README.adoc[String Operations]
+** link:string/string_function.adoc[String functions]
+** link:string/string_function_details.adoc[Details of string functions]
+** link:string/string_comparison.adoc[Comparison of strings]
+** link:string/string_matching.adoc[String matching]
+** link:string/exercise.adoc[Exercise]
+
+* link:input_validation/index.adoc[Validation of Input]
+** link:input_validation/range_check.adoc[Range check]
+** link:input_validation/format_check_tryparse.adoc[Format check with TryParse]
+** link:input_validation/Exercise.adoc[Exercise]
+
+* link:GLOSSARY.adoc[Glossary]

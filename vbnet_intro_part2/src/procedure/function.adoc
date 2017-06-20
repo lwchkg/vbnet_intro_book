@@ -1,0 +1,208 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+A `Function` is a procedure that returns a value.
+Here is the syntax of a function:
+
+[source, vb]
+....
+Function NameOfFunction(parameterList) As ReturnType
+    ...
+    Return returnValue
+    ...
+End Function
+....
+
+The following are some components of a function:
+
+[options="header", cols="1, 4"]
+|===
+
+| Component | Details
+
+| Name of the function
+| You should give the function a name (with a few words in CamelCase, e.g. AreaOfTriangle) that describes what the function do.
+  If the name is valid for a variable, then it is valid also for a function.
+
+| Parameter list
+| Usually the inputs of the function.
+  The list is written in a comma separated list of parameters (okay to be empty).
+  Details will be discussed later in this chapter.
+
+| `Return` statement
+| Ends the function immediately, and outputs a return value to the caller.
+  Multiple `Return` statements can be present in a single function, and this is useful with `If`...`Then`...`Else` statements.
+
+| Return type
+| The data type (`Integer`, `Double` or others) of the return value.
+
+|===
+
+
+<<<
+== Example: area of a triangle
+Here is a function that calculates the area of a triangle:
+
+[source, vb]
+....
+Module Module1
+    Function AreaOfTriangle(base As Double,
+                            height As Double) As Double
+        Return base * height / 2
+    End Function
+
+    Sub Main()
+        Dim base1 As Double = 3
+        Dim height1 As Double = 4
+        Console.WriteLine("The area of triangle one is {0}.",
+                          AreaOfTriangle(base1, height1))
+
+        Dim base2 As Double = 5
+        Dim height2 As Double = 6
+        Console.WriteLine("The area of triangle two is {0}.",
+                          AreaOfTriangle(base2, height2))
+
+        Console.ReadLine()
+    End Sub
+End Module
+....
+
+[role="sample-output", subs="normal"]
+....
+The area of triangle one is 6.
+The area of triangle two is 15.
+....
+
+[NOTE]
+====
+In VB.NET, no procedures can be put inside other procedures.
+They are supposed to be inside a `Module` only.
+====
+
+[TIP]
+====
+As the first example, the function above is very simple.
+It is still a good idea to write a function because we do not want to enter the formula twice.
+Writing the same code multiple times makes it more probable to introduce bugs.
+====
+
+
+<<<
+== Example: inputting values
+Here is a function that allow the user to enter numbers:
+[source, vb]
+....
+Module Module1
+    Function ReadDoubleWithPrompt(prompt As String) As Double
+        Console.Write(prompt)
+        Return Console.ReadLine()
+    End Function
+
+    Sub Main()
+        Dim base As Double =
+            ReadDoubleWithPrompt("Enter the base: ")
+
+        Dim height As Double =
+            ReadDoubleWithPrompt("Enter the height: ")
+
+        Console.WriteLine("The area of the triangle is {0}.",
+                          base * height / 2)
+        Console.ReadLine()
+    End Sub
+End Module
+....
+
+[role="sample-output", subs="normal"]
+....
+Enter the base: [userinput]#4#
+Enter the height: [userinput]#8#
+The area of the triangle is 16.
+....
+
+You may have already noticed that AreaOfTriangle in the last example can also be used in this example.
+
+
+<<<
+== Example: converting marks into grades
+
+Here is an example using `If`...`Then` statements.
+
+[source, vb]
+....
+Module Module1
+    Function GetGradeByMark(mark As Double) As String
+        If mark >= 80 Then
+            Return "A"
+        End If
+        If mark >= 70 Then
+            Return "B"
+        End If
+        If mark >= 50 Then
+            Return "C"
+        End If
+        Return "F"
+    End Function
+
+    Sub Main()
+        Console.Write("Enter the mark: ")
+        Dim mark As Double = Console.ReadLine()
+
+        Console.WriteLine("The grade is {0}.",
+                          GetGradeByMark(mark))
+        Console.ReadLine()
+    End Sub
+End Module
+....
+
+[role="sample-output", subs="normal"]
+....
+Enter the mark: [userinput]#50#
+The grade is C.
+....
+
+CAUTION: Remember to return a value in all cases.
+
+TIP: Avoid `Else` or `ElseIf` keyword after a `Return` statement if possible.
+
+<<<
+== Parameters, parameter list and arguments
+
+As shown in the examples, the *parameter list* is having a syntax similar to `Dim` statement, which is:
+
+[source, vb]
+....
+name1 As dataType1, name2 As dataType2, ...
+....
+
+Each part of the parameter list is a *parameter*.
+A parameter is a special variable that receives data from callers.
+You can have any number of parameters in a function.
+Some functions have no parameter (e.g. `Console.ReadLine`), and some have a lot of parameters.
+
+When you use the function, you are going to *call* it.
+The place you call the function is called the *caller* or the *call site*.
+Each time you call the function, you can supply different arguments to the same function.
+For example:
+
+[source, vb]
+....
+Dim area1 As Double = AreaOfTriangle(base1, height1)
+Dim area2 As Double = AreaOfTriangle(base2, height2)
+....
+
+The arguments of your function call should match the definitions of the function.
+
+
+== Class Work
+Write down a `Function` statement for the following.
+Remember to name the function and parameters properly.
+
+. A function that finds the perimeter of a rectangle, where the width and the height of the rectangle are given.
+// Function PerimeterOfRectangle(width As Double, height As Double) As Double
+. A function that finds the percentage change, where the original value and the new value are given.
+// Function PercentageChange(originalValue As Double, newValue As Double)
+. A function that check if the student gets a pass in all subjects: Chinese, English and Mathematics.
+// Function IsAllPass(chineseMark As Double, englishMark As Double, mathMark As Double)
+. A function that checks if the content of a string is a number, e.g. `"12345"`.
+// Function IsStringNumeric(s As String) As Boolean
+// Avoid IsNumber because it hints at a different input.

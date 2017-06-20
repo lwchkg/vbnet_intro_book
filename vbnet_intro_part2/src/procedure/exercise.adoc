@@ -1,0 +1,32 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+[large-gaps]
+. Write two functions to calculate the area and the perimeter of a rectangle from its length and width.
+  Use these functions to create a program that produce output that matches the following sample:
++
+[role="sample-output", subs="normal"]
+....
+Enter the length of the rectangle: [userinput]#10#
+Enter the width of the rectangle: [userinput]#8#
+The area of the rectangle is 80, and the perimeter is 36.
+....
+
+
+. Write a function that checks if a child is eligible for free entry.
+  The child is eligible for free entry if he or she is aged under 3 and is shorter than 90 cm.
+  Use the function to create a program that produce output that matches the following sample:
++
+[role="sample-output", subs="normal"]
+....
+Enter the age: [userinput]#2#
+Enter the height (in cm): [userinput]#90#
+The child is NOT eligible for free entry.
+....
++
+[role="sample-output", subs="normal"]
+....
+Enter the age: [userinput]#1#
+Enter the height (in cm): [userinput]#89.5#
+The child is eligible for free entry.
+....

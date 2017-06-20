@@ -1,0 +1,34 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+To make a program to feel like a real program you need some *looping*, i.e. repeating the execution of some instructions.
+Now we learn the `Do`...`Loop` statement, which is the most versatile of all loop structures.
+
+The syntax of a `Do`...`Loop` statement is listed below:
+[source, vb]
+....
+Do { While | Until } condition
+    [ statements ]
+Loop
+-or-
+Do
+    [ statements ]
+Loop { While | Until } condition
+-or-
+Do
+    [ statements ]
+Loop
+....
+
+The `Do`...`Loop` statement repeats the execution of the statements inside indefinitely, `While` or `Until` some condition is true.
+Each time the statements inside are executed is called an *iteration*.
+
+The condition can be put either after `Do` or after `Loop`.
+If the condition is put after `Do`, then the condition is tested in the first iteration.
+And the condition is not satisfied, the loop will not be run even once.
+
+In the other way, if the condition is put after `Loop`, then the condition is not tested in the first iteration.
+In this case, the loop is guaranteed to run at least once.
+
+Of course, you can also choose not to include a condition at all.
+In this case the `Do`...`Loop` statement ends only with some other means (e.g. by a `Exit Do` statement, which is introduced later).

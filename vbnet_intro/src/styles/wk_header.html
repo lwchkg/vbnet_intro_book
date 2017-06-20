@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="wk_headerfooter.css"/>
+    <script>
+var vars = {};
+
+function loadVars() {
+  var splited_url = window.location.search.substring(1).split('&');
+  for (var i in splited_url) {
+    var z = splited_url[i].split('=', 2);
+    vars[z[0]] = decodeURIComponent(z[1]);
+  }
+}
+
+function addContent() {
+  var is_left = (vars.page - vars.frompage) & 1;
+  var element;
+  if (is_left) {
+    element = document.getElementsByClassName('leftcell')[0];
+    element.innerHTML = '<span class="page"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="doctitle"></span>';
+  } else {
+    element = document.getElementsByClassName('rightcell')[0];
+    element.innerHTML = '<span class="title"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="page"></span>';
+  }
+}
+
+function doSubstitution() {
+  for (var key in vars) {
+    var elements = document.getElementsByClassName(key);
+    for (var j=0; j < elements.length; ++j)
+      elements[j].textContent = vars[key];
+  }
+}
+
+function load() {
+  addContent();
+  doSubstitution();
+}
+
+loadVars();
+    </script>
+  </head>
+  <body class="header" onload="load()">
+    <table style="border-bottom: 1px solid lightgray; width: 100%">
+      <tr>
+        <td class="leftcell"></td>
+        <td class="rightcell" style="text-align:right"></td>
+      </tr>
+    </table>
+  </body>
+</html>

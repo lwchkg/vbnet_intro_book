@@ -1,9 +1,3 @@
-# Book build output with custom options
-_ebook
-# Archives (for storing build outputs)
-*.zip
-*.7z
-
 # Node rules:
 ## Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
@@ -15,8 +9,12 @@ node_modules
 
 # Book build output
 _book
+_ebook
 
 # eBook build output
 *.epub
 *.mobi
-*.pdf
+
+# Disable common eBook PDFs, but allowing other PDFs to be uploaded
+book.pdf
+book_wk.pdf

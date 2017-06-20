@@ -1,0 +1,37 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+
+In this section, we discuss how to validate input.
+Data validation is one of the ways to make sure that only correct data are processed.
+If wrong data is inputted into a program, the processed output becomes meaningless.
+
+In worse cases, a specially crafted input can be used to exploit the absence of data validation.
+This can result in security incidents such as:
+
+* Leakage of sensitive information, e.g. bank account passwords or encryption keys.
+  This can result in financial loss or many other serious consequences.
+  Information leakage does often hit news headlines, such as the link:https://en.wikipedia.org/wiki/2016_Democratic_National_Committee_email_leak[2016 Democratic National Committee email leak] incident, and the link:https://en.wikipedia.org/wiki/Ashley_Madison_data_breach[Ashley Madison data breach] in 2015.
+
+* Execution of arbitrary code from a remote computer.
+  This can be used for all kinds of malicious activities, such as running ransomware and leaking information.
+
+* Access of computer accounts without checking for credentials.
+
+* Crashing or freezing the computer program.
+  This is a type of denial-of-service (DoS) attack.
+  Some of these attacks can be further developed to execute arbitrary code.
+
+There are many types of data validation, such as:
+
+* *Range check*. For example, the month of a date should lie between 1 and 12.
+* *Format check*, i.e. check that the data is in a specific pattern. For example, dates must be in the format D/M/Y or DD/MM/YYYY.
+
+You can search the web to know more types of data validation.
+However, data validation are not limited to these types. For example:
+
+* Someone enters a day in a certain format.
+  Besides checking the format, we also check whether the year, month and day entered form a valid date.
+
+* Someone sets a new password to his or her account.
+  To see whether the password is weak, we check the length of the password, check the variety of characters, and compare the password with a list of known passwords.

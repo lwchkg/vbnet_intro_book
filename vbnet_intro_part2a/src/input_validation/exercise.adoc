@@ -1,0 +1,21 @@
+= {{ page.title }} {% autochapter %}2{% endautochapter %}
+:icons: font
+
+[large-gaps]
+. Pick any exercise question in the previous chapters.
+  Write the program again with input validation.
+  Do this on as many exercise questions as you like.
+  You may want to redesign your program again, so please write from scratch.
+
+. Pick any exercise question in the previous chapters, preferably the one you selected in the last question.
+  Edit or rewrite the program with `Option Strict On`.
+  Again, do this on as many exercise questions as you like.
+
+. Check whether a given year, month and day form a valid date in the Gregorian calendar.
+  You should write this as a function, e.g.
++
+[source, vb]
+....
+Function IsValidDate(year As Integer, month As Integer,
+                     day As Integer) As Boolean
+....

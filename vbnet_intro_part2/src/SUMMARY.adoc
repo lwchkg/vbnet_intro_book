@@ -1,0 +1,27 @@
+= Summary
+
+* link:README.adoc[More on Operators]
+** link:operator/assignment.adoc[Assignment operators]
+** link:operator/exercise.adoc[Exercise]
+
+* link:procedure/index.adoc[Procedures]
+** link:procedure/function.adoc[Function]
+** link:procedure/sub.adoc[Sub]
+** link:procedure/parameter.adoc[More about parameters]
+** link:procedure/exercise.adoc[Exercise]
+
+* link:math/index.adoc[Mathematics in VB.NET]
+** link:math/exercise.adoc[Exercise]
+
+* link:random/index.adoc[Random Numbers]
+** link:random/rnd.adoc[Rnd function]
+** link:random/dice.adoc[Simulating dice]
+** link:random/random_integer.adoc[Random integers in a range]
+** link:random/exercise.adoc[Exercise]
+
+* link:do_statement/index.adoc[Do…Loop Statement]
+** link:do_statement/examples.adoc[Learning by examples]
+** link:do_statement/exit_do_continue_do.adoc[Exit Do and Continue Do]
+** link:do_statement/exercise.adoc[Exercise]
+
+* link:GLOSSARY.adoc[Glossary]

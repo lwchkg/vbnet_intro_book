@@ -1,0 +1,50 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+We can modify the statement `Int(Rnd() * 6) + 1` to generate random integers that fall with in a certain range.
+Take `Int(Rnd() * 4) + 8` as an example:
+
+[options="headeer", cols="3a,3a,^4l,^5l"]
+|===
+| `Rnd()` | `Rnd() * 4` | `Int(Rnd() * 4)` | `Int(Rnd() * 4) + 8`
+|$$\ge 0$$ and $$<\frac{1}{4}$$ |	$$\ge 0$$ and $$<1$$ |  |
+|$$\ge \frac{1}{4}$$ and $$<\frac{2}{4}$$ |	 |  |
+|$$\ge \frac{2}{4}$$ and $$<\frac{3}{4}$$ |	 |  |
+|$$\ge \frac{3}{4}$$ and $$<1$$ |	 |  |
+|===
+
+From the table, we know that the statement generates random integers from 8 to 11 inclusive.
+Also, “4” is the number of possible outcomes, and “8” is the minimum outcome.
+
+The total number of possible outcomes can be calculated by $$max-min+1$$, where $$max$$ and $$min$$ are the maximum and minimum outcome respectively.
+Therefore, we can generate integers inside a range using the formula below:
+
+[.text-center]
+`[variable] = Int(Rnd() * (max – min + 1)) + min`
+
+Or in strict mode:
+
+[.text-center]
+`[variable] = CInt(Int(Rnd() * (max – min + 1))) + min`
+
+
+TIP: You can create a function with the code above, to avoid repeating the formula every time you use it.
+
+
+<<<
+== Class work
+
+Write a Visual Basic statement to generate the random numbers below:
+
+[options="header", cols="1, ^1l"]
+|===
+|Random number |VB code
+|An integer from 1 to 6 inclusive |Int(Rnd() * 6) + 1
+|An integer from 1 to 5 inclusive |
+|An integer from 10 to 20 inclusive |
+|An integer from 25 to 30 inclusive |
+|An integer from 50 to 100 inclusive |
+|An integer from 0 to 2 inclusive |
+|An integer from −5 to 5 inclusive |
+|The sum of the values of 2 dice (the possible values of each die are 1 to 6) |
+|===

@@ -1,0 +1,137 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+A few essential string functions are listed here.
+First, we learn a function that returns the length of the string:
+
+[cols="^4,9,7l,4l",options="header",role="eb-small"]
+|===
+|Function |Syntax and Meaning |Example |Result
+|Len
+|`Len(str)` +
+Returns the length of the string, i.e. its number of characters. +
+a|[literal,subs=normal]
+Len("Very good!")
+Len("[.chinese]#鄧顯#")
+|10
+2
+
+|===
+
+
+Next, a few functions that extract a part of a string are introduced:
+
+[cols="^4,9,7l,4l",options="header",role="eb-small"]
+|===
+|Function |Syntax and Meaning |Example |Result
+
+|Left
+|`Left(str, Length)` +
+Returns a specified number of characters from the left of the string.
+|Left("Wonder", 3)
+|"Won"
+
+|Right
+|`Right(str, Length)` +
+Returns a specified number of characters from the right of the string.
+|Right("Wonder", 2)
+|"er"
+
+|Mid
+|`Mid(str, Start)` +
+`Mid(str, Start, Length)` +
+Returns a specified number of characters from a string. If `Length` is
+not supplied, all characters from position `Start` is returned.
+|Mid("Block", 2, 3)
+Mid("clever", 3)
+|"loc"
+"ever"
+
+|Trim
+|`Trim(str)` +
+Removes white space characters at the beginning and at the end of a string.
+|Trim(" I win! ")
+|"I win!”
+
+|===
+
+
+Then, we learn functions that do transformations on a string:
+
+[cols="^4,9,7l,4l",options="header",role="eb-small"]
+|===
+|Function |Syntax and Meaning |Example |Result
+
+|UCase
+|`UCase(str)` +
+Converts a string to upper case.
+|UCase("good!")
+|"GOOD!"
+
+|LCase
+|`LCase(str)` +
+Converts a string to lower case.
+|LCase("sMaRt")
+|"smart"
+
+|===
+
+<<<
+Next, we have functions that convert characters to and from their Unicode code point:
+
+[cols="^4,9,7l,4l",options="header",role="eb-small"]
+|===
+|Function |Syntax and Meaning |Example |Result
+
+|AscW
+|`AscW(str)` +
+Returns the Unicode code point of the first character of the string.
+|AscW("A")
+|65
+
+|ChrW
+|`ChrW(charCode)` +
+Returns the character with the given Unicode code point.
+|ChrW(65)
+|"A"
+
+|===
+
+
+Finally, we have functions that search for a string within another string:
+
+[cols="^4,9,7l,4l",options="header",role="small"]
+|===
+|Function |Syntax and Meaning |Example |Result
+
+|String.StartsWith
+|`[str1].StartsWith(str2)` +
+Returns `True` if `str1` starts with `str2`, `False` otherwise.
+|"example".StartsWith("ex")
+"example".StartsWith("ple")
+|True
+False
+
+|String.EndsWith
+|`[str1].EndsWith(str2)` +
+Returns `True` if `str1` ends with `str2`, `False` otherwise.
+|"example".EndsWith("ex")
+"example".EndsWith("ple")
+|False
+True
+
+|InStr
+|`InStr(Start, Str1, Str2)` +
+`InStr(Str1, Str2)` +
+Returns an integer which is the start position of the first occurrence
+of `Str2` within `Str1`. Returns zero if `Str2` is not found.
+|InStr("aabc", "ab")
+InStr("abc", "d")
+InStr(1,"rear","r")
+InStr(2,"rear","r")
+|2
+0
+1
+4
+
+|===

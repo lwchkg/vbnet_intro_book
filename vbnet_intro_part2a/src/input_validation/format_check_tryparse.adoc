@@ -1,0 +1,125 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+== Parse method: what you have used implicitly
+
+Every numeric data type in VB.NET has a `Parse` method and a `TryParse` method.
+So far you have been using `Parse` method implicitly:
+
+[source, vb]
+....
+Dim n As Integer = Console.ReadLine()
+....
+
+This statement is implicitly converted to the following during compilation:
+
+[source, vb]
+....
+Dim n As Integer = Integer.Parse(Console.ReadLine())
+....
+
+`Parse` method checks for the following errors:
+
+* empty string
+* invalid format
+* overflow
+
+// Thousand separators.
+{% set sp = "&#x2006;" %}
+A numeric data type can represent a certain range of numbers.
+For example, the range representable by `Integer` is from {{ "&#x2212;2,147,483,648" | replace(",", sp) }} to {{ "2,147,483,647" | replace(",", sp) }}.
+If the input string is a number outside this range, then overflow happens.
+
+`Parse` throws an exception when one of the three errors is encountered.
+Unless we handle the exception, that exception becomes a runtime error.
+
+
+<<<
+== TryParse method: Parse without exceptions
+
+To avoid the exceptions, we can use `TryParse` instead.
+Here is the definition of `TryParse` method of `Integer`, `Single` and `Double` in MSDN:
+
+[source, vb]
+....
+Public Shared Function TryParse (
+      s As String,
+      <OutAttribute> ByRef result As Integer
+) As Boolean
+....
+
+The first argument (`s`) of the function is the input.
+And the second argument (`result`) is the output, which is passed by reference.
+The function returns a `Boolean`, being `True` if parsing succeeds.
+If parsing fails, the function returns `False` with the value `0` stored in `result`.
+
+The use of `TryParse` is shown in the following example:
+
+[source, vb]
+....
+Dim n As Integer
+If Not Integer.TryParse(Console.ReadLine(), n) Then
+    Console.WriteLine("The input is not an integer.")
+End If
+....
+
+You can also ask the user to input again if validation fails:
+[source, vb]
+....
+Dim n As Integer
+Do
+    Console.Write("Enter the value of n: ")
+    If Integer.TryParse(Console.ReadLine(), n) Then
+        Exit Do
+    End If
+    Console.WriteLine("You should input an integer. Try again.")
+Loop
+....
+
+<<<
+
+Since the code is quite long here, it is preferable to put the code in a `Function` to improve readability.
+Here is an example:
+
+[source, vb]
+....
+Function InputIntegerUntilSuccess(prompt As String) As Integer
+    Do
+        Console.Write(prompt)
+        Dim number As Integer
+        If Integer.TryParse(Console.ReadLine(), number) Then
+            Return number
+        End If
+        Console.WriteLine(
+            "You should input an integer. Try again.")
+    Loop
+End If
+....
+
+
+== Option Strict On
+
+Now you have learned to use `TryParse` to validate numbers.
+From now on, you should add `Option Strict On` to the beginning every `.vb` file you write:
+
+[source, vb]
+....
+Option Strict On
+
+Module Module1
+    ' Insert code here.
+End Module
+....
+
+
+This forbids a few types of implicit conversions, including the implicit conversion from string to numbers.
+Having `Option Strict On` protects you from making a few bad coding habits.
+
+
+
+[NOTE]
+====
+`Dim n As Integer = Console.ReadLine()` and similar statements do not work with `Option Strict On`.
+If needed, use `Integer.Parse` and similar methods instead.
+See the beginning of this section to see how to use these methods.
+====

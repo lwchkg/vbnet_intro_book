@@ -1,0 +1,137 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+In this section, we discuss a few string matching functions.
+
+[CAUTION]
+====
+Details of string comparison apply to string matching.
+In addition, `String.StartsWith` and `InStr` may give incorrect results on arbitrary UTF-16 strings.
+====
+
+
+== String.StartsWith and String.EndsWith methods
+
+`String.StartsWith` and `String.EndsWith` are methods of `String`, which check if a string starts with or ends with certain substring respectively.
+The return values of there methods are `Boolean`, i.e. either `True` or `False`.
+
+Note: a *method* is a procedure associated with an object.
+Despite the difference in the name, a method is essentially the same as other procedures.
+
+The following example checks a file by its name to see if it is a Microsoft Word file.
+
+[source,vb]
+....
+Console.Write("Enter the name of the file: ")
+Dim filename As String = Console.ReadLine()
+
+Dim filenameUpper As String = UCase(filename)
+If filenameUpper.EndsWith(".DOCX") Then
+    Console.WriteLine("It is a DOCX file.")
+ElseIf filenameUpper.EndsWith(".DOC") Then
+    Console.WriteLine("It is a DOC file.")
+Else
+    Console.WriteLine("It is not a Microsoft Word file.")
+End If
+....
+
+[role="sample-output", subs="normal"]
+....
+Enter the name of the file: [userinput]#test.docx#
+It is a DOCX file.
+....
+
+
+<<<
+== InStr function
+
+To locate one string within another string, you can use the InStr function.
+The syntax of the InStr function is as follows:
+
+[source, vb]
+....
+[variable =] InStr(String1, String2)
+[variable =] InStr(Start, String1, String2)
+....
+
+The meanings of the parameters are listed below:
+
+[options="header",cols="^1,4"]
+|===
+|Parameter |Meaning
+|Start (Optional)
+|The starting position of the search.
+Matches before Start are ignored.
+If omitted, then Start is 1.
+The position is one-based.
+|String1 |The string to be searched in. Also known as haystack.
+|String2 |The string to search for. Also known as needle.
+|===
+
+
+And here is the return:
+
+[options="header",cols="3,4"]
+|===
+|Condition |InStr returns
+|String2 is found within String1. |Position where the first match begins (one-based)
+|String2 is not found. |0
+|String1 is empty. |0
+|Start > length of String1. |0
+|String2 is empty, but String1 is not empty. |Start
+|Start < 1 |Exception. Results in runtime error if not handled.
+|===
+
+<<<
+To see how the InStr function works, it is best to read an example:
+
+[source, vb]
+....
+Console.Write("Enter a string: ")
+Dim str1 As String = Console.ReadLine()
+
+Console.Write("Enter the substring to search for: ")
+Dim str2 As String = Console.ReadLine()
+
+Dim pos As Integer = InStr(str1, str2)
+If pos > 0 Then
+    Console.Write("""{0}"" is found in positions {1}",
+                  str2, pos)
+    Do
+        pos = InStr(pos + 1, str1, str2)
+        If pos = 0 Then
+            Exit Do
+        End If
+        Console.Write(", {0}", pos)
+    Loop
+    Console.WriteLine(".")
+Else
+    Console.WriteLine("""{0}"" is not found.", str2)
+End If
+....
+
+[role="sample-output", subs="normal"]
+....
+Enter a string: [userinput]#Seeing InStr work is eeeasy.#
+Enter the substring to search for: [userinput]#ee#
+"ee" is found in positions 2, 22, 23.
+....
+
+
+<<<
+== Class Work
+Evaluate the following VB.NET expressions.
+Strings are compared and matched using binary comparison.
+
+[options="header", cols="2l,1l"]
+|===
+|VB.NET expression |Result
+|"abc".StartsWith("ab")|
+|"35th".EndsWith("TH")|
+|Instr("aeroplane", "a")|
+|Instr(3, "aeroplane", "a")|
+|Instr(8, "aeroplane", "a")|
+|Instr("ab", "able")|
+|Left("flyer", InStr("flyer", "y"))|
+|Mid("Zepellin", InStr("Zepellin", "l"))|
+|===

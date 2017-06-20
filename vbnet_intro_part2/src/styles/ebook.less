@@ -1,0 +1,17 @@
+@import "fontawesome/font-awesome";
+@import "common";
+
+.page .section, .markdown-section {
+  h1 { font-size: 1.75em; }
+  .mjx-chtml { font-size: 116%; }  /* MathJax */
+}
+
+.page .book-chapter-1 + .section > h1:first-child {
+  font-size: 2em;
+}
+
+@shade-color : #f0f0f0;
+kbd { background-color: @shade-color; }
+.page .section {
+  table tr:nth-child(2n), pre, code { background-color: @shade-color; }
+}

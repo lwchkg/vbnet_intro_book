@@ -1,0 +1,42 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+You can put an If...Then...Else statement inside another statement block, such as another If...Then...Else statement.
+Please see the example below:
+
+[source, vb]
+....
+Console.Write("Are you a member? (Y/N) ")
+Dim s As String = Console.ReadLine()
+If s = "Y" Or s = "y" Then
+    Console.WriteLine("Members - Free of charge.")
+Else
+    Console.WriteLine("You are not a member.")
+    Console.Write("Input discount code (ENTER for none): ")
+    Dim s1 As String = Console.ReadLine()
+    If s1 = "5318" Then
+        Console.WriteLine("Discount #1: the entry fee is $2.")
+    ElseIf s1 = "2407" Then
+        Console.WriteLine("Discount #2: the entry fee is $5.")
+    Else
+        Console.WriteLine("No discount: the entry fee is $10.")
+    End If
+End If
+Console.ReadLine()
+....
+
+Here is the output:
+
+[role="sample-output", subs="normal"]
+....
+Are you a member? (Y/N) [userinput]#N#
+You are not a member.
+Input discount code (ENTER for none): [userinput]#2407#
+Discount #2: the entry fee is $5.
+....
+
+[TIP]
+====
+Using nested If...Then...Else statements is bad for readability.
+To make programs readable, keep the use of nested statements to a minimum.
+====

@@ -1,0 +1,49 @@
+= Glossary
+
+== ASCII
+American Standard Code for Information Interchange, a popular character set.
+
+== boundary case
+A special case that one or more input is at or just beyond its maximum or minimum limits.
+
+== Big5
+A character encoding used in Taiwan, Hong Kong, and Macau for Traditional Chinese characters.
+
+== character
+A minimal unit of text. Can be a letter, a digit, a punctuation mark, a white space, and other things.
+
+== character set
+A set of characters where each character corresponds to a unique number.
+
+== CJK
+Chinese, Japanese and Korean languages.
+
+== control characters
+A character which is not a written symbol. Examples are CR and LF. Also known as non-printing character.
+
+== data validation
+The process of ensuring that input data is valid before processing.
+
+== format check
+Checks that data is in a specific format, e.g. dates and telephone numbers.
+
+== GBK
+Guojia Biaozhun Kuozhan, a character encoding for simplified Chinese characters. Despite the name, GBK is not an official standard.
+
+== lexicographical order
+A mathematical order similar to how dictionary order words.
+
+== method
+A procedure in the context of objects.
+
+== range check
+Checks that numerical data is within a specified range of possible values.
+
+== string
+A sequence of characters.
+
+== Unicode
+The character set that can be used to represent text in different languages simultaneously.
+
+== UTF-16
+One of the character encoding under Unicode. Used to store strings in .NET platform.

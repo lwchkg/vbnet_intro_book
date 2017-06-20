@@ -1,0 +1,66 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+Strings are compared in a way similar to how words are ordered in a dictionary.
+A word appearing in the beginning of the dictionary is considered less than a word in the end of the dictionary, e.g. “apple” is less than “umbrella”.
+We call this *lexicographical order*.
+
+To see which string is greater, the first characters of the two strings are compared.
+If the characters are different, then the comparison is finished.
+Otherwise, the second characters are compared, so on.
+If all the characters of both strings are equal, then the strings are equal.
+However, if the characters of only one of the strings are used up in the comparison, and all the compared characters are equal, then the longer string is greater.
+
+Here are a few results of string comparison (written as Boolean expressions that are true).
+
+[options="header",cols="3l,5"]
+|===
+|Comparison result |Reason
+|"banana" < "cat" |The first characters are different, with “b” less than “c”.
+|"formal" < "forward" |The fourth characters are different, with “m” less than “w”.
+|"other" < "otherwise" |All characters from “other” are used up.
+|"car" = "car" |All characters are the same.
+|===
+
+If the strings compared contain capital letters, digits, symbols, Chinese characters, etc., the comparison is more complex.
+Different comparison methods produce different results even for comparing the same strings.
+
+In this section, we discuss only *binary comparison* of strings in VB.NET, which is the default method.
+It means the strings are compared with their UTF-16 encoded values, code unit by code unit.
+For characters encoded with one UTF-16 code unit, this means to compare their Unicode code point.
+
+<<<
+
+You can refer to the ASCII table for the Unicode code point of letters, digits and some symbols.
+And you are expected to recite a few facts:
+
+. “A” is the smallest capital letter, and “Z” is the largest capital letter.
+  Comparison of small letters is similar.
+. “0” is the smallest of the digits, and “9” is the largest.
+. Capital letters are always less than small letters
+. Digits are always less than letters, capital or small.
+. White space is less than all other characters, except for control characters such as CR or LF.
+. Chinese characters have a Unicode code point of 12288 or more.
+  For example, “[.chinese]#鄧#” has a Unicode code point of 37159 (or U+9127).
+  However, the Unicode code points of Chinese characters are not ordered in a specific order.
+
+Note: you are not required to recite the ASCII table except for the facts listed above.
+
+
+== Class work
+
+Evaluate the following VB.NET expressions.
+Strings are compared using binary comparison.
+Note: results are either `True` or `False`.
+
+[options="header",cols="5l,1l"]
+|===
+|VB.NET expression |Result
+|"pointer" >= "pointing" |
+|"Flower" < "flower" |
+|ChrW(100) > "Delicious" |
+|Trim(" Visual Basic ") \<= " Visual Basic " |
+|Mid("okay", 2, 2) > Mid("okay", 4, 2) |
+|Len("human") < 5 Or Strings.Right("able", 2) = "le" |
+|"26726820" < "Tang Hin" And UCase("35th") < "35th"
+|===

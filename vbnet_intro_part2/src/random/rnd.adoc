@@ -1,0 +1,80 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+The `Rnd` function returns a number less than one, but greater than or equal to zero, i.e.
+
+[.text-center]
+$$ 0 \le x < 1 $$
+
+The syntax is of `Rnd` function is simply `Rnd()`, and it returns a random number in the `Single` data type.
+The following program outputs a result of `Rnd` ten times.
+Repeat running the program to see what is wrong.
+
+[source, vb]
+....
+Sub Main()
+    Console.WriteLine(Rnd())
+    Console.WriteLine(Rnd())
+    Console.WriteLine(Rnd())
+    Console.WriteLine(Rnd())
+    Console.WriteLine(Rnd())
+    Console.WriteLine(Rnd())
+    Console.WriteLine(Rnd())
+    Console.WriteLine(Rnd())
+    Console.WriteLine(Rnd())
+    Console.WriteLine(Rnd())
+
+    Console.ReadLine()
+End Sub
+....
+
+[role="sample-output", subs="normal"]
+....
+0.7055475
+0.533424
+0.5795186
+0.2895625
+0.301948
+0.7747401
+0.01401764
+0.7607236
+0.81449
+0.7090379
+....
+
+
+<<<
+== Seeding the Rnd function with Randomize()
+
+To make the `Rnd` function generate different sequence of numbers, we call the `Randomize` function before using the `Rnd` function.
+`Randomize` gives a seed to the random number generator used by `Rnd`.
+`Randomize` should be called only once in the whole program.
+
+After the corrections, the program looks like:
+
+[source, vb]
+....
+Sub Main()
+    Randomize()
+
+    Console.WriteLine(Rnd())
+    Console.WriteLine(Rnd())
+    ...
+End Sub
+....
+
+This time the outputs are different every time the program is run:
+
+[role="sample-output", subs="normal"]
+....
+0.8079645
+0.101173
+0.2512715
+0.1493037
+0.09772438
+0.262411
+0.9260049
+0.8997617
+0.7723758
+0.7103807
+....

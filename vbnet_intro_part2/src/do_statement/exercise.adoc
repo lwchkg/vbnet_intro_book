@@ -1,0 +1,72 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+[large-gaps]
+. Write a program that draws random prizes.
+  There should be a 70% chance to win a “small prize”, a 25% chance to win a “big prize”, and a 5% chance to win a “JUMBO prize”.
+  After the lucky draw you should ask the user whether to draw again.
++
+The output of the program should match the following sample:
++
+[role="sample-output", subs="normal"]
+....
+Lucky Draw
+==========
+You have won a JUMBO prize!
+Draw again? (Y/N) [userinput]#Y#
+You have won a small prize!
+Draw again? (Y/N) [userinput]#n#
+....
+
+. Write a program that play the number guessing game.
+  The program should generate a random secret number from 1 to 100, and let the user guess it.
++
+It is okay for skip the number of guesses in your first version, and add it back later.
++
+[role="sample-output", subs="normal"]
+....
+Number Guessing Game
+====================
+The computer has a secret number between 1 and 100.
+Guess the number in as few tries as possible.
+
+Enter your guess: [userinput]#50#
+Too large!
+Enter your guess: [userinput]#25#
+Too small!
+Enter your guess: [userinput]#37#
+Too small!
+Enter your guess: [userinput]#44#
+Correct! You have guessed 4 times.
+....
+
+
+. Write a program that plays rock-paper-scissors.
+  The program should continue to play until the player ends the program.
+  You can follow the sample output below:
++
+[role="sample-output", subs="normal"]
+....
+ROCK, PAPER and SCISSORS
+Type END to end the game.
+
+Rock, paper or scissors? (R/P/S/END) [userinput]#R#
+The computer played SCISSORS. You have won!
+The score is now 1:0
+
+Rock, paper or scissors? (R/P/S/END) [userinput]#C#
+Please enter "R", "P" or "S".
+
+Rock, paper or scissors? (R/P/S/END) [userinput]#S#
+The computer played ROCK. You have lost!
+The score is now 1:1
+
+Rock, paper or scissors? (R/P/S/END) [userinput]#P#
+The computer played PAPER. Draw!
+The score is now 1:1
+
+Rock, paper or scissors? (R/P/S/END) [userinput]#END#
+....
+
+
+. Write a program that finds the greatest common divisor (GCD) of two integers using Euclidean algorithm.

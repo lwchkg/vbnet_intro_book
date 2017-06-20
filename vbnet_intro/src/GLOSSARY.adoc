@@ -1,0 +1,49 @@
+= Glossary
+
+== Boolean
+A data type that has only two values: true or false. This is named after the English mathematician George Boole.
+
+== bytecode
+An intermediate representation of programs, designed for efficient execution by a virtual machine. Bytecode earned it's name because it's opcodes (operation codes) are one byte in size.
+
+== compiler
+A computer programs that transforms source code to executable programs.
+
+== condition
+An expression that evaluates to a Boolean value.
+
+== console applications
+Programs that interact with users using a text-only interface.
+
+== floating point
+A form of representation of real numbers, which is used in computers and scientific calculators. Floating point can be used to represent very large and very small numbers.
+
+== graphical user interface
+Interface that contains graphical elements, such as labels, text boxes and buttons.
+
+== interpreter
+A computer program that directly execute source code without compiling it to machine code.
+
+== just-in-time (JIT) compilation
+Compilation done during execution of a program. This is used instead of interpreters to improve performance.
+
+== logical operator
+Operators that do calculations on Boolean values.
+
+== machine code
+A set of instructions executed directly by a computer's central processing unit (CPU). Every processor family has it own instruction set.
+
+== programming language
+A notation, or a “language”, which is used for writing programs.
+
+== relational operators
+Operators that do comparisons. These are the equal sign and five inequality signs.
+
+== source code
+Instructions to computers written in a programming language.
+
+== virtual machine
+A program that runs a certain kind of bytecode, or a program that emulates a certain kind of computer system.
+
+== Visual Basic.NET
+Visual Basic was a programming language and IDE created by Microsoft, for which GUI programs can be written easily. Later it has been evolved into Visual Basic.NET, which contains feature of modern programming languages.

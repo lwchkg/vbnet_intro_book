@@ -1,0 +1,26 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+[large-gaps]
+. Write a program that accepts the hour of a day (from 0 to 23).
+  Then calculate the hour three hours later.
++
+The output of the program should match the sample below:
++
+[role="sample-output", subs="normal"]
+....
+Enter the hour (0-23): [userinput]#22#
+Three hours later, the time is 1:00
+....
+
+. Write a program that accepts the hours (from 0 to 23) of the start time and the end time.
+  Find the difference of the time, provided that the difference is between 1 and 24 hours (inclusive).
++
+The output of the program should match the sample below:
++
+[role="sample-output", subs="normal"]
+....
+Enter the start hour (0-23): [userinput]#22#
+Enter the end hour (0-23): [userinput]#12#
+The time elapsed is 14 hours.
+....

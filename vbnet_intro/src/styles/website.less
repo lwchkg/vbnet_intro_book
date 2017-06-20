@@ -1,0 +1,14 @@
+@import "common";
+
+@sidebar-link-padding-v:              5px;
+@sidebar-link-padding-h:              15px;
+
+.book-summary {
+  font-family: @caption-font-family;
+
+  ul.summary li {
+    &.header, a, span {
+      padding: @sidebar-link-padding-v @sidebar-link-padding-h;
+    }
+  }
+}

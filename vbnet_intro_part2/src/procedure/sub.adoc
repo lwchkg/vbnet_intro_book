@@ -1,0 +1,64 @@
+= {% autotitle %}{% endautotitle %}
+:icons: font
+
+A `Sub` is a procedure that does not return a value.
+Here is the syntax:
+
+[source, vb]
+....
+Sub NameOfSub(parameterList)
+    ...
+    Return  ' Use only if you need to return early
+    ...
+End Sub
+....
+
+Like a function, `Return` statements can be used in a `Sub`.
+Since no value is being returned, the `Return` statement is just the single word `Return`.
+
+[TIP]
+====
+You can use `Return` statements in `Sub Main()`.
+By exiting `Sub Main()`, these `Return` statements end the program immediately.
+====
+
+<<<
+== Example
+
+[source, vb]
+....
+Module Module1
+    Sub ProcessMark(mark As Double)
+        If mark < 0 Or mark > 100 Then
+            Console.WriteLine("Invalid mark: {0}", mark)
+            Return
+        End If
+
+        If mark >= 50 Then
+            Console.WriteLine("Pass")
+        Else
+            Console.WriteLine("Fail")
+        End If
+    End Sub
+
+    Sub Main()
+        Console.Write("Enter the mark of subject 1: ")
+        Dim mark1 As Double = Console.ReadLine()
+        ProcessMark(mark1)
+
+        Console.Write("Enter the mark of subject 2: ")
+        Dim mark2 As Double = Console.ReadLine()
+        ProcessMark(mark2)
+
+        Console.ReadLine()
+    End Sub
+End Module
+....
+
+[role="sample-output", subs="normal"]
+....
+Enter the mark of subject 1: [userinput]#45#
+Fail
+Enter the mark of subject 2: [userinput]#50#
+Pass
+....
